@@ -1,0 +1,33 @@
+.about__container {
+  padding-inline: 3rem;
+}
+.about .banner {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  padding-inline: 2rem;
+  background-image: url("../../assets/images/aboutBanner.png");
+  height: 223px;
+  margin: auto;
+  border-radius: 1rem;
+  display: grid;
+  place-items: center;
+  margin-bottom: 1.7rem;
+  max-width: 100%;
+  
+  &::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3); // Noir avec 30% d'opacité
+    border-radius: 1rem; // Pour conserver les coins arrondis
+    z-index: 1;
+  }
+}
+

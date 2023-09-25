@@ -1,0 +1,42 @@
+@use "../../scss/variables.scss"  as *;
+
+$color-primary: #ff6060;
+$color-tertiary: white;
+$background-light: #f1f1f1;
+
+.description__panel {
+  margin-bottom: 1rem;
+  flex-basis: 50%;
+  p {
+    margin-block: 0;
+  }
+  .description__header {
+    background-color: $color-primary;
+    color: $color-tertiary;
+    padding: 0.2em 1em;
+    border-radius: 0.3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+  .description__content {
+    margin-top: -9px;
+    position: relative;
+    z-index: -1;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    background-color: #f6f6f6;
+    color: #fd7f7f;
+    &.visible {
+      min-height: 50px;
+      padding: 13px 10px;
+      max-height: fit-content;
+      @media screen and (width <= 768px) {
+        min-height: fit-content;
+        max-height: 293px;
+      }
+    }
+  }
+}

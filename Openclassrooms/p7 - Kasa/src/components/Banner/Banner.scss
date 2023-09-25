@@ -1,0 +1,60 @@
+@use "../../scss/variables.scss"  as *;
+
+.banner--homepage {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  padding-inline: 2rem;
+  background-image: url("../../assets/images/Homebanner.png");
+  height: 223px;
+  margin: auto;
+  border-radius: 1rem;
+  display: grid;
+  place-items: center;
+  color: $color-tertiary;
+  margin-bottom: 1.7rem;
+  max-width: 100%;
+  
+  &::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3); // Noir avec 30% d'opacité
+    border-radius: 1rem; // Pour conserver les coins arrondis
+    z-index: 1;
+  }
+
+  h2 {
+    filter: brightness(2);
+    white-space: pre-line;
+    position: relative; // Pour positionner le texte au-dessus du voile
+    z-index: 2;
+
+    &.desktop {
+      display: block;
+    }
+
+    &.mobile {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    max-height: 111px;
+
+    h2.desktop {
+      display: none;
+    }
+
+    h2.mobile {
+      display: block;
+      margin: 0rem 0rem -1rem -5rem;
+    }
+  }
+}
